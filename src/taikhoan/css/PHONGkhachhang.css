@@ -1,0 +1,57 @@
+/* Style chung cho Button phòng */
+
+.room-button {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-width: 2;
+    -fx-padding: 15;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+}
+
+/* Hiệu ứng khi di chuột vào */
+.room-button:hover {
+	
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-background-color: rgb(192, 192, 192);
+}
+
+/* Định dạng các Label bên trong */
+.label-ma {
+	-fx-font-style: italic;
+    -fx-font-size: 16px;
+    -fx-text-fill: rgb(0, 255, 255);
+}
+
+.label-info {
+    -fx-font-size: 13px;
+    -fx-text-fill: FF6C0C;
+}
+
+/* Các Class trạng thái để Controller gán vào */
+.available {
+    -fx-border-color: #2ecc71; /* Viền xanh lá */
+}
+.available1 {
+    -fx-border-color: #ff1245; /* Viền xanh lá */
+}
+
+.booked {
+    -fx-border-color: rgb(255, 184, 149); /* Viền đỏ */
+    -fx-opacity: 0.8;
+}
+
+.status-available {
+    -fx-text-fill: #2ecc71;
+    -fx-font-weight: bold;
+}
+
+.status-booked {
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+}
+.label-lp{
+	-fx-text-fill:#239BA7;
+}

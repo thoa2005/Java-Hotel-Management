@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="597.0" prefWidth="798.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DTP.controller.DatPhongKhachHangController">
+    <top>
+      <AnchorPane style="-fx-background-color: F1E6C9;">
+         <children>
+              <VBox spacing="10.0">
+                  <padding>
+                  <Insets bottom="15" left="15" right="15" top="15" />
+               </padding>
+                  <children>
+                      <Label style="-fx-background-color: white; -fx-background-radius: 10;" text="THÔNG TIN CÁ NHÂN &amp; LỊCH SỬ ĐẶT PHÒNG" />
+                      <GridPane hgap="10" vgap="10">
+                          <children>
+                              <Label text="Họ tên:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                              <TextField fx:id="txtTenKH" editable="false" prefWidth="200" style="-fx-background-color: #f4f4f4;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                              
+                              <Label text="Số điện thoại:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                              <TextField fx:id="txtSDT" editable="false" prefWidth="200" style="-fx-background-color: #f4f4f4;" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                              
+                              <Label text="Số CCCD:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtCCCD" editable="false" prefWidth="200" style="-fx-background-color: #f4f4f4;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              
+                              <Label text="Email:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtEmail" editable="false" prefWidth="200" style="-fx-background-color: #f4f4f4;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                          </children>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                      </GridPane>
+                      <HBox alignment="CENTER_RIGHT">
+                          <Button onAction="#handleDelete" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-weight: bold;" text="Hủy đặt phòng đã chọn" />
+                      </HBox>
+                  </children>
+              </VBox>
+                <Button fx:id="btnBack" onAction="#handleBack" prefHeight="32.0" prefWidth="58.0" text="Trở về" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+         </children>
+      </AnchorPane>
+    </top>
+    <center>
+        <TableView fx:id="tableLichSu" VBox.vgrow="ALWAYS">
+    <columns>
+        <TableColumn fx:id="colMaPhong" prefWidth="100" text="Mã Phòng" />
+        <TableColumn fx:id="colNgayNhan" prefWidth="198.0" text="Ngày Nhận" />
+        <TableColumn fx:id="colNgayTra" prefWidth="172.0" text="Ngày Trả" />
+        <TableColumn fx:id="colTrangThai" prefWidth="327.0" text="Trạng Thái" />
+    </columns>
+    
+  
+</TableView>
+    </center>
+    
+</BorderPane>

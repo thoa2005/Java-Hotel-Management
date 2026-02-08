@@ -1,0 +1,82 @@
+.root {
+    -fx-background-color: rgb(128, 128, 128) !important;
+    
+}
+
+.glass-panel, .invoice-panel {
+  -fx-background-color: rgba(30, 41, 59, 0.85) !important;
+    -fx-background-radius: 12 !important;
+    -fx-border-radius: 12 !important;
+    -fx-border-width: 2 !important;
+    /* Viền trắng xanh phát sáng */
+    -fx-border-color: rgba(200, 230, 255, 0.6) !important;
+    -fx-effect: dropshadow(gaussian, rgba(56, 189, 248, 0.5), 15, 0.4, 0, 0) !important;
+}
+
+.header-title {
+    -fx-text-fill: white !important;
+    -fx-font-size: 32px !important;
+    -fx-font-weight: bold !important;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.4), 10, 0.4, 0, 0) !important;
+}
+
+/* 4. Labels bên trong - Đảm bảo nhìn rõ chữ */
+.input-label, .invoice-text {
+    -fx-text-fill: rgb(128, 255, 255) !important;
+    -fx-font-weight: bold !important;
+}
+
+.invoice-value, .invoice-text-small {
+    -fx-text-fill: #e2e8f0 !important; 
+}
+
+.button-pay {
+    -fx-background-color: #2563eb !important;
+    -fx-text-fill: white !important;
+    -fx-background-radius: 8 !important;
+    -fx-font-weight: bold !important;
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.6), 15, 0.4, 0, 0) !important;
+}
+
+.money-field {
+    -fx-background-color: rgb(255, 255, 255) !important;
+    -fx-text-fill: rgb(0, 0, 0) !important;
+    -fx-border-color: #1e293b !important;
+    -fx-border-radius: 12 !important;
+    -fx-font-weight:bold;
+}
+
+.change-container {
+    -fx-background-color: rgba(34, 197, 94, 0.1) !important;
+    -fx-border-color: #15803d !important;
+    -fx-border-radius: 8 !important;
+}
+
+.change-value {
+    -fx-text-fill: #4ade80 !important;
+    -fx-effect: dropshadow(gaussian, rgba(74, 222, 128, 0.3), 8, 0, 0, 0) !important;
+}
+
+.total-value {
+    -fx-text-fill: #22d3ee !important;
+    -fx-font-size: 28px !important;
+    -fx-font-weight: 900 !important;
+    -fx-effect: dropshadow(gaussian, rgba(34, 211, 238, 0.5), 15, 0.4, 0, 0) !important;
+}
+
+.invoice-brand {
+    -fx-text-fill: #f1f5f9 !important;
+    -fx-font-weight: bold !important;
+}
+
+.invoice-date, .invoice-footer-msg, .invoice-id-small, .neon-radio, .sub-header {
+    -fx-text-fill: rgb(255, 255, 255) !important;
+}
+
+.invoice-line {
+    -fx-stroke: #334155 !important;
+}
+.total-label, .invoice-divider, .change-label{
+-fx-text-fill:white;
+}
+

@@ -1,0 +1,102 @@
+.main-root {
+    -fx-background-color: 
+        /* Lớp 1: Hình khối lục giác mờ ảo tạo bằng radial-gradient */
+        radial-gradient(focus-angle 45deg, focus-distance 20%, center 25% 25%, radius 30%, rgba(56, 189, 248, 0.05), transparent),
+        radial-gradient(center 80% 80%, radius 40%, rgba(129, 140, 248, 0.05), transparent),
+        /* Lớp 2: Màu nền tối sâu */
+        #0f172a;
+    -fx-font-family: "Segoe UI Semibold";
+}
+
+.label-title {
+    -fx-font-size: 30px;
+    -fx-font-weight: 900;
+    -fx-text-fill: linear-gradient(to right, #38bdf8, #818cf8, #ffffff);
+    /* Tạo vệt sáng rực xung quanh chữ */
+    -fx-effect: dropshadow(gaussian, rgba(56, 189, 248, 0.6), 20, 0.5, 0, 0);
+    -fx-padding: 0 0 10 0;
+}
+
+/* Khối Lọc (Filter) - Hiệu ứng Kính có viền phát sáng */
+.filter-container {
+    -fx-background-color: rgba(30, 41, 59, 0.8);
+    -fx-background-radius: 20;
+    /* Viền phát sáng Gradient (Vệt sáng xanh chạy quanh khung) */
+    -fx-border-color: linear-gradient(to right, transparent, #38bdf8, transparent);
+    -fx-border-width: 1 0 1 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 15, 0, 0, 10);
+}
+
+.button-search {
+    -fx-background-color: linear-gradient(to bottom right, #0ea5e9, #2563eb);
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-min-width: 80;
+    -fx-min-height: 44;
+    -fx-effect: dropshadow(gaussian, #0ea5e9, 15, 0.4, 0, 0);
+}
+
+.button-search:hover {
+    -fx-background-color: linear-gradient(to bottom right, #38bdf8, #2563eb);
+    -fx-scale-x: 1.1; /* Phóng to nhẹ khi hover */
+}
+
+.table-container {
+    -fx-background-color: rgba(15, 23, 42, 0.6);
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-padding: 15;
+}
+
+.custom-table {
+    -fx-background-color: transparent;
+}
+
+.custom-table .column-header {
+    -fx-background-color: rgba(56, 189, 248, 0.1);
+    -fx-text-fill: #38bdf8;
+    -fx-font-weight: bold;
+    -fx-border-color: rgba(56, 189, 248, 0.3);
+    -fx-border-width: 0 0 2 0; /* Chỉ vệt sáng bên dưới */
+}
+
+.button-export {
+    -fx-background-color: linear-gradient(to right, #22c55e, #16a34a);
+    -fx-background-radius: 12;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(34, 197, 94, 0.6), 15, 0.5, 0, 0);
+}
+
+.custom-table .placeholder .label {
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-font-style: italic;
+    -fx-font-size: 16px;
+}
+
+.label-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: linear-gradient(to right, #94a3b8, #38bdf8, #818cf8);
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(56, 189, 248, 0.4), 10, 0, 0, 0);
+}
+
+
+.filter-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(gaussian, #38bdf8, 8, 0.5, 0, 0);
+}
+
+
+.footer-tip{
+	-fx-text-fill:#ea7639;
+}
+.decorative-shape {
+   
+    -fx-shape: "M 30,0 L 60,20 L 60,50 L 30,70 L 0,50 L 0,20 Z";
+    -fx-background-color: rgba(255, 255, 255, 0.05); /* Màu trắng cực mờ */
+    -fx-border-color: rgba(0, 255, 255, 0.2); /* Viền xanh neon mờ */
+    -fx-border-width: 1px;
+    -fx-rotate: 15; /* Xoay nghiêng cho nghệ thuật */
+}

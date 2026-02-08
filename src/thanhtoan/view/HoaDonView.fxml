@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+
+<BorderPane prefHeight="700.0" prefWidth="1000.0" styleClass="main-container" stylesheets="@../../taikhoan/css/ThanhToan.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thanhtoan.view.HoaDonViewController">
+    <padding>
+        <Insets bottom="30" left="30" right="30" top="30" />
+    </padding>
+
+    <top>
+        <VBox spacing="8" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="15">
+                    <children>
+                        <Button fx:id="btnBack" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" styleClass="button-secondary" text="← Trở về" />
+                        <Label styleClass="header-title" text="Thanh Toán" />
+                    </children>
+                </HBox>
+                <Label fx:id="lblSubTitle" styleClass="sub-header" text="Hoàn tất giao dịch và xuất hóa đơn cho khách hàng" />
+                <Region prefHeight="15.0" />
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <GridPane hgap="30" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="55" />
+                <ColumnConstraints percentWidth="45" />
+            </columnConstraints>
+
+            <VBox spacing="20" styleClass="glass-panel" GridPane.columnIndex="0">
+                <padding><Insets bottom="25" left="25" right="25" top="25" /></padding>
+                
+                <VBox spacing="8">
+                    <Label styleClass="input-label" text="CHỌN PHÒNG ĐANG THUÊ" />
+                    <HBox spacing="10">
+                        <ComboBox fx:id="cbDatPhong" prefHeight="45.0" prefWidth="400.0" promptText="Chọn phòng..." HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnRefresh" onAction="#handleRefresh" prefHeight="45.0" prefWidth="50.0" styleClass="button-refresh" text="↺" />
+                    </HBox>
+                </VBox>
+
+                <VBox spacing="12">
+                    <Label styleClass="input-label" text="PHƯƠNG THỨC THANH TOÁN" />
+                    <HBox spacing="25">
+                        <RadioButton fx:id="rbtnTienMat" styleClass="neon-radio" text="Tiền mặt" />
+                        <RadioButton fx:id="rbtnCK" styleClass="neon-radio" text="Chuyển khoản" />
+                        <RadioButton fx:id="rbtnThe" styleClass="neon-radio" text="Thẻ / Visa" />
+                    </HBox>
+                </VBox>
+
+                <VBox spacing="8">
+                    <Label styleClass="input-label" text="SỐ TIỀN KHÁCH ĐƯA" />
+                    <TextField fx:id="txtTienNhan" alignment="CENTER_RIGHT" prefHeight="70.0" promptText="0" styleClass="money-field" />
+                </VBox>
+
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" styleClass="change-container">
+                    <children>
+                        <Label styleClass="change-label" text="TIỀN THỪA:" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="lblTienThua" styleClass="change-value" text="0 VND" />
+                    </children>
+                </HBox>
+
+                <Region VBox.vgrow="ALWAYS" />
+
+                <HBox spacing="15">
+                    <Button fx:id="btnCreate" onAction="#createInvoice" prefHeight="55.0" prefWidth="250.0" styleClass="button-pay" text="THANH TOÁN" HBox.hgrow="ALWAYS" />
+                    <Button fx:id="btnPrint" disable="true" onAction="#handleXHD" prefHeight="55.0" prefWidth="180.0" styleClass="button-print" text="XUẤT HÓA ĐƠN" HBox.hgrow="ALWAYS" />
+                </HBox>
+            </VBox>
+
+            <VBox spacing="15" styleClass="invoice-panel" GridPane.columnIndex="1">
+                <padding><Insets bottom="30" left="30" right="30" top="30" /></padding>
+                
+                <VBox alignment="TOP_CENTER" spacing="5">
+                    <Label styleClass="invoice-brand" text="JAVA HOTEL POS" />
+                    <Label fx:id="lblNgayLap" styleClass="invoice-date" text="Ngày: 01/01/2026 12:00" />
+                    <Label styleClass="invoice-divider" text="------------------------------------------" />
+                </VBox>
+
+                <GridPane hgap="10" vgap="12">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="100" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" />
+                    </columnConstraints>
+                    
+                    <Label styleClass="invoice-text" text="PHÒNG:" GridPane.rowIndex="0" />
+                    <Label fx:id="lblSoPhong" styleClass="invoice-value" text="---" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label styleClass="invoice-text" text="KHÁCH HÀNG:" GridPane.rowIndex="1" />
+                    <Label fx:id="lblKhach" styleClass="invoice-value" text="---" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label styleClass="invoice-text" text="CHECK-IN:" GridPane.rowIndex="2" />
+                    <Label fx:id="lblCheckIn" styleClass="invoice-text-small" text="--/--/--" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                    <Label styleClass="invoice-text" text="CHECK-OUT:" GridPane.rowIndex="3" />
+                    <Label fx:id="lblCheckOut" styleClass="invoice-text-small" text="--/--/--" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    <Label styleClass="invoice-text" text="SỐ ĐÊM:" GridPane.rowIndex="4" />
+                    <Label fx:id="lblSoNgay" styleClass="invoice-text-small" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                    <Label styleClass="invoice-text" text="ĐƠN GIÁ:" GridPane.rowIndex="5" />
+                    <Label fx:id="lblGia" styleClass="invoice-text-small" text="0 VND" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                </GridPane>
+
+                <Line endX="300.0" styleClass="invoice-line" />
+
+                <HBox alignment="CENTER_LEFT">
+                    <Label styleClass="total-label" text="TỔNG CỘNG" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Label fx:id="lblTongTienBig" styleClass="total-value" text="0 VND" />
+                </HBox>
+
+                <Region VBox.vgrow="ALWAYS" />
+                
+                <VBox alignment="CENTER" spacing="5">
+                    <Label styleClass="invoice-footer-msg" text="Cảm ơn quý khách đã sử dụng dịch vụ!" />
+                    <Label styleClass="invoice-id-small" text="Mã hóa đơn: INV-2026-001" />
+                </VBox>
+            </VBox>
+        </GridPane>
+    </center>
+</BorderPane>

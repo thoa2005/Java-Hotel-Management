@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@../../taikhoan/css/PHONGkhachhang.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PHONG.controller.KhachHangController">
+	<top>
+		<AnchorPane style="-fx-background-color: #fcf5e6;">
+			<children>
+				<VBox alignment="CENTER" spacing="10" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					<padding>
+						<Insets bottom="20" top="20" />
+					</padding>
+					<Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="DANH SÁCH PHÒNG TRỐNG" />
+					<Label style="-fx-font-style: italic; -fx-text-fill: #7f8c8d;" text="Bấm vào phòng để thực hiện đặt phòng" />
+               <HBox alignment="CENTER" prefHeight="3.0" prefWidth="452.0" spacing="10.0">
+                  <children>
+      					<MenuButton alignment="CENTER" mnemonicParsing="false" text="Loại Phòng">
+      						<items>
+      							<MenuItem mnemonicParsing="false" onAction="#lPAll" text="Tất Cả" />
+      							<MenuItem mnemonicParsing="false" onAction="#lPT" text="Phòng Thường" />
+      							<MenuItem mnemonicParsing="false" onAction="#lPD" text="Phòng Đôi" />
+      							<MenuItem mnemonicParsing="false" onAction="#lPV" text="Phòng Vip" />
+      						</items>
+      					</MenuButton>
+                     <MenuButton mnemonicParsing="false" text="Sắp Xếp Theo Giá">
+                       <items>
+                         <MenuItem mnemonicParsing="false" onAction="#XSD" text="Mặc định" />
+                         <MenuItem mnemonicParsing="false" onAction="#XST" text="Tăng dần" />
+                           <MenuItem mnemonicParsing="false" onAction="#XSG" text="Giảm dần" />
+                       </items>
+                     </MenuButton>
+                  </children>
+               </HBox>
+				</VBox>
+
+				<Button fx:id="btnBack" onAction="#handleBack" prefHeight="32.0" prefWidth="58.0" style="-fx-cursor: hand; -fx-background-radius: 10;" text="Trở về" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+			</children>
+		</AnchorPane>
+	</top>
+	<center>
+		<ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: #f4f7f6;">
+			<content>
+				<FlowPane fx:id="flowPanePhong" alignment="TOP_CENTER" columnHalignment="CENTER" hgap="20" style="-fx-background-color: #fcfafa;" vgap="20">
+					<padding>
+						<Insets bottom="25" left="25" right="25" top="25" />
+					</padding>
+				</FlowPane>
+			</content>
+		</ScrollPane>
+	</center>
+</BorderPane>

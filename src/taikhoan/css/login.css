@@ -1,0 +1,48 @@
+
+/* Nền tổng thể của ứng dụng */
+.root {
+    -fx-background-color: #f4f4f4;
+}
+
+/* Container chính chứa form đăng nhập */
+.login-container {
+    -fx-background-color: white;
+    -fx-padding: 30;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+}
+
+/* Các nhãn tên (Label) */
+.label {
+    -fx-font-family: "Segoe UI", Arial;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+/* Ô nhập liệu (TextField & PasswordField) */
+.text-field {
+    -fx-background-radius: 5;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+    -fx-padding: 8;
+}
+
+/* Nút bấm Đăng nhập */
+.button-login {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.button-login:hover {
+    -fx-background-color: #1976D2;
+}
+
+/* Nút Đăng ký (để dạng nhẹ nhàng hơn) */
+.button-register {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2196F3;
+    -fx-border-color: #2196F3;
+    -fx-border-radius: 5;
+}

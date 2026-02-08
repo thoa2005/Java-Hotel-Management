@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane styleClass="root" stylesheets="@../../css/KhachHang.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taikhoan.controllerfx.KhachHangController">
+	<top>
+		<HBox alignment="CENTER_LEFT" spacing="10" styleClass="top-bar">
+			<padding>
+				<Insets bottom="10" left="10" right="10" top="10" />
+			</padding>
+			<Label fx:id="lblKhachHang" prefHeight="39.0" prefWidth="582.0" style="-fx-text-fill: white;" styleClass="top-label" text="Khách hàng" textFill="WHITE">
+				<font>
+					<Font name="System Bold" size="27.0" />
+				</font>
+			</Label>
+			<Region HBox.hgrow="ALWAYS" />
+         <Label fx:id="lblU" alignment="CENTER" prefHeight="42.0" prefWidth="152.0" style="-fx-text-fill: A8BBA3; -fx-border-color: FCF9EA; -fx-border-radius:19;" text="Label" textFill="#f5f5f5">
+            <font>
+               <Font name="System Italic" size="17.0" />
+            </font>
+         </Label>
+			<Button fx:id="btnLogout" onAction="#handleLogout" styleClass="btn-logout" stylesheets="@../../css/KhachHang.css" text="Đăng xuất" />
+		</HBox>
+	</top>
+
+	<left>
+		<VBox spacing="10" styleClass="side-menu" BorderPane.alignment="CENTER_LEFT">
+			<padding>
+				<Insets bottom="10" left="10" right="10" top="20" />
+			</padding>
+			<Button fx:id="btnKhachHang" onAction="#handleLogin" styleClass="menu-btn" text="Thông tin cá nhân" textFill="#e81111">
+				<font>
+					<Font name="System Bold Italic" size="17.0" />
+				</font>
+			</Button>
+			<Button fx:id="btnXemPhong" onAction="#handleXemPhong" styleClass="menu-btn" text="Xem/Đặt Phòng" />
+			<Button fx:id="btnDatPhong" onAction="#handleDatPhong" styleClass="menu-btn" text="Lịch sử đặt phòng" />
+			
+		</VBox>
+	</left>
+
+	<center>
+		<VBox spacing="12">
+			<padding>
+				<Insets bottom="10" left="10" right="10" top="10" />
+			</padding>
+
+			<!-- Table: show rooms or booking history -->
+			<TableView fx:id="tableCenter" prefWidth="700" VBox.vgrow="ALWAYS">
+				<columns>
+					<TableColumn fx:id="colMaPhong" prefWidth="150" text="Mã phòng" />
+					<TableColumn fx:id="colLoaiPhong" prefWidth="200" text="Loại" />
+					<TableColumn fx:id="colGia" prefWidth="150" text="Giá" />
+					<TableColumn fx:id="colTrangThai" prefWidth="150" text="Trạng thái" />
+				</columns>
+			</TableView>
+			<!-- Booking form -->
+
+		</VBox>
+	</center>
+</BorderPane>

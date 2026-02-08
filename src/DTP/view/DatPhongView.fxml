@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="datphongRoot" stylesheets="@../../taikhoan/css/KhachHang.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DTP.controller.DatPhongController">
+	<top>
+		<VBox spacing="10.0">
+			<BorderPane.margin>
+				<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+			</BorderPane.margin>
+			<children>
+				<HBox alignment="CENTER_LEFT" spacing="15.0">
+					<children>
+						<Label prefHeight="24.0" prefWidth="888.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" text="QUẢN LÝ ĐẶT PHÒNG" />
+						<Button fx:id="btnBack" onAction="#handleBack" style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-cursor: hand;" text="← Trở về" />
+					</children>
+					<padding>
+						<Insets bottom="10.0" />
+					</padding>
+				</HBox>
+
+				<GridPane hgap="10.0" vgap="10.0">
+					<children>
+						<Label style="-fx-text-fill: white;" text="Khách hàng:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+						<ComboBox fx:id="cbCustomer" prefWidth="200" promptText="-- Chọn khách hàng --" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+						<Label style="-fx-text-fill: white;" text="Phòng:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+						<ComboBox fx:id="cbRoom" prefWidth="200" promptText="-- Chọn phòng --" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+						<Label style="-fx-text-fill: white;" text="Ngày đến:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+						<DatePicker fx:id="dpCheckIn" prefWidth="200" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+						<Label style="-fx-text-fill: white;" text="Ngày đi:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+						<DatePicker fx:id="dpCheckOut" prefWidth="200" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+						<HBox spacing="10.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2">
+							<children>
+								<Button fx:id="btnSave" onAction="#handleSave" prefWidth="100" styleClass="btn-primary" text="Lưu (Đặt mới)" />
+								<Button fx:id="btnEdit" onAction="#handleUpdate" prefWidth="100" styleClass="btn-secondary" text="Sửa thông tin" />
+								<Button fx:id="btnCancel" onAction="#handleDelete" prefWidth="110" styleClass="btn-danger" text="Hủy đặt phòng" />
+								<Button fx:id="btnClear" onAction="#handleClear" prefWidth="80" text="Làm mới" />
+								<Button fx:id="btnNextStatus" onAction="#handleNextStatus" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Xử lý trạng thái" />
+							</children>
+						</HBox>
+					</children>
+               <columnConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+				</GridPane>
+			</children>
+		</VBox>
+	</top>
+
+	<center>
+		<TableView fx:id="table" VBox.vgrow="ALWAYS">
+			<BorderPane.margin>
+				<Insets bottom="10.0" left="10.0" right="10.0" top="0" />
+			</BorderPane.margin>
+			<columns>
+				<TableColumn fx:id="colId" prefWidth="50" text="ID" />
+				<TableColumn fx:id="colCustomer" prefWidth="150" text="Khách Hàng" />
+				<TableColumn fx:id="colRoom" prefWidth="100" text="Mã Phòng" />
+				<TableColumn fx:id="colCheckIn" prefWidth="120" text="Ngày Đến" />
+				<TableColumn fx:id="colCheckOut" prefWidth="120" text="Ngày Đi" />
+				<TableColumn fx:id="colStatus" prefWidth="120" text="Trạng Thái" />
+			</columns>
+		</TableView>
+	</center>
+</BorderPane>

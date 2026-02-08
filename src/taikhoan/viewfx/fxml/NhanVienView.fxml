@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane stylesheets="@../../css/NhanVien.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taikhoan.controllerfx.NhanVienController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="top-bar">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label fx:id="lblNhanVien" prefHeight="71.0" prefWidth="638.0" styleClass="top-label" text="Nhân viên" textFill="#c6d3cf">
+            <font>
+               <Font name="System Bold Italic" size="49.0" />
+            </font></Label>
+            <Region HBox.hgrow="ALWAYS" />
+         <Label fx:id="lblU" alignment="CENTER" prefHeight="66.0" prefWidth="115.0" text="Label">
+            <font>
+               <Font name="System Italic" size="16.0" />
+            </font>
+         </Label>
+            <Button fx:id="btnLogout" onAction="#handleLogout" styleClass="btn-logout" text="Đăng xuất" />
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="10" styleClass="side-menu" BorderPane.alignment="CENTER_LEFT">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="20" />
+            </padding>
+            <Button fx:id="btnDanhSach" onAction="#handleDanhSach" styleClass="menu-btn" text="Danh sách đặt phòng" />
+            <Button fx:id="btnDSK" onAction="#handleDSK" styleClass="menu-btn" text="Danh sách khách hàng" />
+            <Button fx:id="btnLapHoaDon" onAction="#handleLapHoaDon" styleClass="menu-btn" text="Lập hoá đơn" />
+         <Button mnemonicParsing="false" onAction="#handleDSHD" text="danh sách hóa đơn" />
+            <Button fx:id="btnCheckIn" onAction="#handleCheckIn" styleClass="menu-btn" text="Check-in" />
+            <Button fx:id="btnCheckOut" onAction="#handleCheckOut" styleClass="menu-btn" text="Check-out" />
+        </VBox>
+    </left>
+
+    <center>
+       <ScrollPane fitToWidth="true" stylesheets="@../../css/PHONGkhachhang.css">
+            <content>
+                <FlowPane fx:id="flowPanePhong" alignment="TOP_CENTER" columnHalignment="CENTER" hgap="20" vgap="20">
+                    <padding>
+                        <Insets bottom="25" left="25" right="25" top="25" />
+                    </padding>
+                </FlowPane>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>
